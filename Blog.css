@@ -1,0 +1,340 @@
+/* Hamster Blog Styles */
+:root {
+    --hamster-brown: #8B4513;
+    --hamster-orange: #FFA500;
+    --hamster-light: #F5DEB3;
+    --hamster-dark: #654321;
+    --hamster-accent: #D2691E;
+    --hamster-cream: #FFF8DC;
+    --hamster-gold: #FFD700;
+  }
+  
+  .hamster-blog-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--hamster-cream);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+    overflow-y: auto; /* Esto agrega la barra de desplazamiento cuando el contenido excede la altura */
+
+}
+
+  
+  .hamster-blog-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed var(--hamster-brown);
+  }
+  
+  .hamster-blog-header h1 {
+    color: var(--hamster-dark);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .blog-intro {
+    color: var(--hamster-accent);
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .hamster-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+  
+  .hamster-tab {
+    padding: 12px 25px;
+    background-color: var(--hamster-light);
+    border: 2px solid var(--hamster-brown);
+    border-radius: 30px;
+    color: var(--hamster-dark);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .hamster-tab:hover {
+    background-color: var(--hamster-orange);
+    color: white;
+  }
+  
+  .hamster-tab.active {
+    background-color: var(--hamster-brown);
+    color: white;
+    border-color: var(--hamster-brown);
+  }
+  
+  .section-title {
+    color: var(--hamster-dark);
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .section-description {
+    color: var(--hamster-accent);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  /* Breeds Section */
+  .breed-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+  }
+  
+  .breed-card {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 2px solid var(--hamster-light);
+  }
+  
+  .breed-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(139, 69, 19, 0.2);
+  }
+  
+  .breed-card.expanded {
+    grid-column: 1 / -1;
+  }
+  
+  .breed-image-container {
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .breed-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  
+  .breed-card:hover .breed-image-container img {
+    transform: scale(1.05);
+  }
+  
+  .breed-info {
+    padding: 20px;
+  }
+  
+  .breed-info h3 {
+    color: var(--hamster-dark);
+    margin: 0 0 15px 0;
+    font-size: 1.5rem;
+  }
+  
+  .breed-details {
+    padding-top: 15px;
+    border-top: 1px dashed var(--hamster-brown);
+  }
+  
+  .breed-details p {
+    color: var(--hamster-accent);
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  .breed-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+    color: var(--hamster-brown);
+  }
+  
+  /* Care Section */
+  .hamster-care-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .care-tip {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--hamster-light);
+  }
+  
+  .care-tip:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+  
+  .care-tip h3 {
+    color: var(--hamster-dark);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .care-tip p {
+    color: var(--hamster-accent);
+    line-height: 1.6;
+    margin-left: 30px;
+  }
+  
+  /* Gallery Section */
+  .hamster-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+  
+  .gallery-item {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+  }
+  
+  .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(139, 69, 19, 0.2);
+  }
+  
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(139, 69, 19, 0.8), transparent);
+    padding: 20px;
+    color: white;
+  }
+  
+  .image-overlay h3 {
+    margin: 0;
+    font-size: 1.4rem;
+  }
+  
+  .breed-description {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+  
+  .gallery-item.active .breed-description {
+    max-height: 100px;
+  }
+  
+  /* Footer */
+  .hamster-blog-footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 2px dashed var(--hamster-brown);
+  }
+  
+  .hamster-blog-footer p {
+    color: var(--hamster-accent);
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+  
+  .subscribe-btn {
+    padding: 15px 30px;
+    background-color: var(--hamster-brown);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .subscribe-btn:hover {
+    background-color: var(--hamster-orange);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 992px) {
+    .hamster-blog-container {
+      padding: 20px;
+    }
+  
+    .breed-cards-container {
+      grid-template-columns: 1fr;
+    }
+  
+    .breed-card.expanded {
+      grid-column: auto;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hamster-blog-header h1 {
+      font-size: 2rem;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
+  
+    .hamster-tabs {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .hamster-tab {
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .hamster-gallery {
+      grid-template-columns: 1fr;
+    }
+  
+    .breed-stats {
+      flex-direction: column;
+      gap: 5px;
+    }
+  
+    .subscribe-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  

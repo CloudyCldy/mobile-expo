@@ -1,0 +1,384 @@
+/* Global box-sizing adjustment */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Hamster Theme Styles - Large Screen Version */
+:root {
+    --hamster-brown: #8B4513;
+    --hamster-orange: #FFA500;
+    --hamster-light: #F5DEB3;
+    --hamster-dark: #654321;
+    --hamster-accent: #D2691E;
+    --hamster-cream: #FFF8DC;
+    --hamster-gold: #FFD700;
+}
+
+/* Base Styles */
+.hamster-profile-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 30px;
+    padding-top: 90px;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh; /* Cambié de height a min-height */
+    background-color: var(--hamster-cream);
+    font-family: 'Arial', sans-serif;
+}
+
+.hamster-profile-card {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 12px 24px rgba(139, 69, 19, 0.3);
+    width: 100%;
+    max-width: 1200px;
+    min-height: auto; /* Cambié de 800px a auto para que se ajuste al contenido */
+    overflow: hidden;
+    border: 3px solid var(--hamster-brown);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 30px; /* Asegura que haya espacio al final */
+}
+
+/* Header Styles */
+.hamster-profile-header {
+    background: linear-gradient(135deg, var(--hamster-brown), var(--hamster-dark));
+    color: white;
+    padding: 40px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.hamster-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid var(--hamster-gold);
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-header-content {
+    text-align: left;
+    max-width: 600px;
+}
+
+.hamster-profile-name {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    color: var(--hamster-gold);
+    text-shadow: 1px 1px 2px var(--hamster-dark);
+}
+
+.hamster-profile-email,
+.hamster-profile-role {
+    margin: 8px 0;
+    font-size: 1.3rem;
+    color: var(--hamster-light);
+    opacity: 0.9;
+}
+
+/* Body Styles */
+.hamster-profile-body {
+    padding: 40px;
+    background-color: var(--hamster-cream);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    overflow-y: auto; /* Permite el desplazamiento si el contenido es grande */
+}
+
+.hamster-current-fact {
+    background-color: var(--hamster-light);
+    padding: 30px;
+    border-radius: 15px;
+    border-left: 8px solid var(--hamster-orange);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.fact-title {
+    color: var(--hamster-dark);
+    margin-top: 0;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fact-content {
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.hamster-facts-section {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.facts-title {
+    color: var(--hamster-dark);
+    border-bottom: 3px dotted var(--hamster-accent);
+    padding-bottom: 15px;
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+
+.facts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.fact-card {
+    background-color: rgba(245, 222, 179, 0.3);
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid var(--hamster-light);
+}
+
+.fact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(139, 69, 19, 0.15);
+    background-color: rgba(245, 222, 179, 0.5);
+}
+
+.fact-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+}
+
+.fact-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Pagination Styles */
+.hamster-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.hamster-page-btn {
+    padding: 12px 20px;
+    background-color: var(--hamster-light);
+    border: 2px solid var(--hamster-dark);
+    border-radius: 8px;
+    color: var(--hamster-dark);
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1.1rem;
+    min-width: 100px;
+}
+
+.hamster-page-btn:hover:not(:disabled) {
+    background-color: var(--hamster-orange);
+    color: white;
+    border-color: var(--hamster-orange);
+}
+
+.hamster-page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.hamster-page-btn.active {
+    background-color: var(--hamster-brown);
+    color: white;
+    border-color: var(--hamster-brown);
+    font-weight: bold;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 8px;
+    margin: 0 15px;
+}
+
+/* Footer Styles */
+.hamster-profile-footer {
+    padding: 30px;
+    text-align: center;
+    background-color: var(--hamster-light);
+    border-top: 2px solid var(--hamster-brown);
+}
+
+.hamster-back-button {
+    padding: 15px 35px;
+    background-color: var(--hamster-brown);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hamster-back-button:hover {
+    background-color: var(--hamster-orange);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading Styles */
+.hamster-loading-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--hamster-cream);
+    gap: 20px;
+}
+
+.hamster-spinner {
+    font-size: 4rem;
+    animation: spin 1.5s linear infinite;
+}
+
+.loading-text {
+    font-size: 1.5rem;
+    color: var(--hamster-dark);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Error Styles */
+.hamster-error-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--hamster-cream);
+}
+
+.hamster-error-message {
+    padding: 40px;
+    background-color: #FFD2D2;
+    color: #D8000C;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 600px;
+    font-size: 1.3rem;
+    border: 2px solid #D8000C;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.hamster-error-icon {
+    font-size: 2rem;
+}
+
+.hamster-retry-button {
+    padding: 12px 25px;
+    background-color: #D8000C;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    margin-top: 15px;
+}
+
+.hamster-retry-button:hover {
+    background-color: #A80000;
+    transform: translateY(-2px);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    .hamster-profile-card {
+        max-width: 900px;
+    }
+}
+
+@media (max-width: 992px) {
+    .facts-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+
+    .hamster-profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-header-content {
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamster-profile-container {
+        padding: 20px;
+    }
+
+    .hamster-profile-card {
+        max-width: 100%;
+        min-height: auto;
+    }
+
+    .hamster-profile-header {
+        padding: 30px 20px;
+    }
+
+    .hamster-profile-body {
+        padding: 25px;
+    }
+
+    .fact-content,
+    .fact-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .facts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hamster-profile-name {
+        font-size: 2rem;
+    }
+
+    .hamster-page-btn {
+        padding: 10px 15px;
+        min-width: auto;
+    }
+}
